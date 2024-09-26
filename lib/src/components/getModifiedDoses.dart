@@ -23,21 +23,21 @@ List<String> getNewBornListModified(int waga) {
     'Nie zalecane',
     getFurosemid(waga),
     getGlukagon(waga),
-    getGlukoza(waga),
+    getGlukozaForNewborn(waga),
     getHydrokortyzon(waga),
     getIbuprofen(waga),
     getKetonal(),
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -75,14 +75,14 @@ List<String> get1monthModified(int waga) {
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -118,14 +118,14 @@ List<String> get2monthModified(int waga) {
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -161,14 +161,14 @@ List<String> get3monthModified(int waga) {
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -204,14 +204,14 @@ List<String> get4monthModified(int waga) {
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -247,14 +247,14 @@ List<String> get5monthModified(int waga) {
     getKlemastin(),
     getKlonazepam(),
     getMagnez(waga),
-    getMidazolam(waga),
+    'Nie zalecane',
     getMorfina(waga),
     getNahco3(waga),
     getNalokson(waga),
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -297,7 +297,7 @@ List<String> get6monthModified(int waga) {
     getParacetamolCzopek(waga),
     getParacetamol(waga),
     getRelanium(waga),
-    getRelsed(waga),
+    'Nie zalecane',
     getSalbutamol(waga),
     getWlew(waga),
   ];
@@ -1360,7 +1360,21 @@ String getGlukagon(int waga) {
 }
 
 String getGlukoza(int waga) {
-  return 'Podaj $waga ml leku i.v.';
+  String dawkaMg = goodNumber(waga: waga, mnoznik: 0.3);
+  String dawkaMl = goodNumber(waga: waga, mnoznik: 1.5);
+  return 'Podaj $dawkaMl ml i.v. \nPodano $dawkaMg g '
+      'leku.';
+}
+
+String getGlukozaForNewborn(int waga) {
+  String dawkaMg = goodNumber(waga: waga, mnoznik: 0.25);
+  String dawkaMl = goodNumber(waga: waga, mnoznik: 1.25);
+  String noPeriod = dawkaMl.replaceAll(',', '.');
+  double rozcienczone = double.parse(noPeriod) * 2;
+  String noDot = rozcienczone.toString().replaceAll('.', ',');
+  return 'Nabierz $dawkaMl ml glukozy 20% i rozcieńcz do $noDot ml.'
+      ' Podaj '
+      'iv lub io. Podałeś $dawkaMg mg glukozy o stężeniu 10%.';
 }
 
 String getHydrokortyzon(int waga) {
@@ -1465,28 +1479,26 @@ String getMagnez(int waga) {
 }
 
 String getMidazolam(int waga) {
-  String dawkaMl = (waga / 10).toStringAsPrecision(2);
-  String dawakMg = (waga * 0.1).toStringAsPrecision(2);
-  return 'Nabierz 5 mg leku i rozcieńcz do 5 ml 0,9% NaCl. Podaj $dawkaMl ml'
-      ' roztworu.\n\nPodałeś $dawakMg mg leku.';
+  String dawka = goodNumberDivided(waga: waga, dzielnik: 10);
+  return 'Nabierz 5 mg leku i rozcieńcz do 5 ml 0,9% NaCl. Podaj $dawka '
+      'ml.\n Podano $dawka mg.';
 }
 
 String getMorfina(int waga) {
-  String dawkaMl = (waga / 10).toStringAsPrecision(2);
-  String dawakMg = (waga * 0.1).toStringAsPrecision(2);
+  String dawkaMl = goodNumberDivided(waga: waga, dzielnik: 10);
+  String dawakMg = goodNumber(waga: waga, mnoznik: 0.1);
   return 'Rozcieńcz 10 mg leku do 10 ml solą fizjologiczną. Podaj $dawkaMl ml'
       ' roztworu powoli i.v.\n\nPodałeś $dawakMg mg leku.\nMoże być konieczne'
       ' powtórzenie dawki.';
 }
 
 String getNahco3(int waga) {
-  return 'Nabierz $waga ml leku z ampułki 8,4% roztworu NaHCO3 i rozcieńcz w '
-      'stosunku 1:1 wodą do iniekcji. Podawaj we wlewie z prędkością 1 '
-      'kropla/sekundę.';
+  return 'Nabierz $waga ml leku z ampułki 8,4% roztworu NaHCO3 i rozcieńcz 5%'
+      ' glukozą w  stosunku 1:1. Podawaj we wlewie z prędkością 1 kropla/sekundę. ';
 }
 
 String getNalokson(int waga) {
-  String dawkaMl = (waga / 10).toStringAsPrecision(2);
+  String dawkaMl = goodNumberDivided(waga: waga, dzielnik: 10);
   if (waga < 41) {
     return 'Nabierz 1 ampułkę (0,4 mg) do strzykawki dziesiątki i rozcieńcz '
         'do 4 ml 0,9% NaCl. Podaj $dawkaMl ml roztworu i.v. \n\nW razie '
@@ -1510,11 +1522,11 @@ String getParacetamolCzopek(int waga) {
 }
 
 String getParacetamol(int waga) {
-  String dawkaMl = (waga * 0.75).toStringAsPrecision(2);
+  String dawkaMl = goodNumber(waga: waga, mnoznik: 0.75);
 
-  String dawkaMg = (waga * 7.5).toStringAsPrecision(2);
-  String dawkaMl2 = (waga * 1.5).toStringAsPrecision(2);
-  String dawakMg2 = (waga * 15).toStringAsPrecision(3);
+  String dawkaMg = goodNumber(waga: waga, mnoznik: 7.5);
+  String dawkaMl2 = goodNumber(waga: waga, mnoznik: 1.5);
+  String dawakMg2 = (waga * 15).toString();
   if (waga < 11) {
     return 'Podaj $dawkaMl ml ($dawkaMg mg) leku we wlewie w ciągu 15 min.\n\n '
         'Dawkę '
@@ -1529,8 +1541,8 @@ String getParacetamol(int waga) {
 }
 
 String getRelanium(int waga) {
-  String dawkaMl = (waga * 0.05).toStringAsPrecision(2);
-  String dawakMg = (waga * 0.25).toStringAsPrecision(2);
+  String dawkaMl = goodNumber(waga: waga, mnoznik: 0.05);
+  String dawakMg = goodNumber(waga: waga, mnoznik: 0.25);
   if (waga < 41) {
     return 'Nabierz 1 ampułkę (10 mg) do strzykawki dwójki. Podaj $dawkaMl ml '
         'leku powoli i.v.\n\nPodałeś $dawakMg mg leku.';
@@ -1539,7 +1551,7 @@ String getRelanium(int waga) {
 }
 
 String getRelsed(int waga) {
-  String dawakMg = (waga * 0.5).toStringAsPrecision(2);
+  String dawakMg = goodNumber(waga: waga, mnoznik: 0.5);
   if (waga < 10) {
     return 'Podaj $dawakMg mg leku p.r.\n\nNa wlewce nie ma podziałki - lek '
         'podaje się w przybliżeniu.';
