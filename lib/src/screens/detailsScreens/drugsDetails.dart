@@ -21,7 +21,7 @@ class DrugDetailsScreen extends StatelessWidget {
             Column(
               children: <Widget>[
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Działanie',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -32,7 +32,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Wskazania',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -43,7 +43,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Przeciwskazania',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -54,7 +54,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Stosowanie w ciąży',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -65,7 +65,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Postać',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -76,7 +76,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Dawkowanie',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -87,7 +87,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Działania niepożądane',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,
@@ -98,7 +98,7 @@ class DrugDetailsScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 kImageSizedBox,
-                Text(
+                const Text(
                   'Informacje dodatkowe',
                   textAlign: TextAlign.center,
                   style: bigRedTextStyle,

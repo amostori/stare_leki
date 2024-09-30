@@ -10,7 +10,7 @@ class AboutScreen extends StatelessWidget {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverAppBar(
+            const SliverAppBar(
               expandedHeight: 200.0,
               floating: false,
               pinned: true,
@@ -34,21 +34,18 @@ class AboutScreen extends StatelessWidget {
         body: Padding(
             padding: const EdgeInsets.all(16.0),
             child: ListView(
-              children: <Widget>[
+              children: const <Widget>[
                 Column(
                   children: <Widget>[
                     kImageSizedBox,
                     Text(
-                      'Wersja: 9.4.0\n\nPrzyczyną powstania aplikacji "Leki u '
-                          'dzieci" były'
+                      'Wersja: 9.6.0\n\nPrzyczyną powstania aplikacji "Leki u '
+                      'dzieci" były'
                       ' kłopoty z pamięcią jej autora, ratownika '
                       'medycznego z zacięciem informatycznym :) \n\nOd tamtej '
                       'pory wielokrotnie zmieniana, uzupełniana, '
                       'poprawiana, słowem, udoskonalana, doczekała się '
-                      'obecnej formy.\n\nDziękujemy wszystkim zaangażowanym w'
-                      ' proces jej tworzenia i rozpowszechniania. \n'
-                      '\nSzczególne podziękowania: Krzysztof '
-                      'Kotliński, Grzegorz Nowak, Kuba Nelle.',
+                      'obecnej formy.\n\n$warning',
                       textAlign: TextAlign.center,
                     ),
                     kImageSizedBox,

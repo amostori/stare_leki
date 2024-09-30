@@ -95,7 +95,7 @@ String setWskazania(String? drugName) {
           'zwiększone napięcie nerwu błędnego, stany '
           'spatyczne mięśniówki gładkiej w jamie brzusznej (kolka żółciowa, '
           'nerkowa), zatrucie związkami fosfoorganicznymi (środki ochrony '
-          'roślin), obecnie nie zalecana rutynowo w NZK.';
+          'roślin), obecnie niezalecana rutynowo w NZK.';
     case 'Deksametazon':
       return 'Astma, wstrząs anafilaktyczny, zapalenie krtani u dzieci.';
     case 'Fentanyl':
@@ -164,13 +164,15 @@ String setPrzeciwwskazania(String? drugName) {
       return 'W stanach zagrożenia życia brak';
     case 'Amiodaron':
       return 'Częstoskurcz wielokształtny (Torsade de Pointes), zatrucie '
-          'trójcyklicznymi lekami przeciwdepresyjnymi.';
+          'trójcyklicznymi lekami przeciwdepresyjnymi, uczulenie na jod.';
     case 'Atropina':
       return 'W stanach zagrożenia życia brak';
     case 'Deksametazon':
       return 'Nadwrażliwość na składniki leku.';
     case 'Fentanyl':
-      return 'Unikać stosowania u pacjenta zażywającego inhibitory MAO w '
+      return 'Dzieci <1 r.ż. Unikać stosowania u pacjenta zażywającego '
+          'inhibitory '
+          'MAO w '
           'ciągu ostatnich 14 dni - ryzyko zgonu.\n\n Po podaniu większej '
           'dawki '
           '(>5 µg/kg) może dojść do sztywności klatki piersiowej, którą '
@@ -200,11 +202,11 @@ String setPrzeciwwskazania(String? drugName) {
     case 'Klemastin':
       return 'Nie stosuj u dzieci.';
     case 'Klonazepam':
-      return 'W stanach zagrożenia życia brak.';
+      return 'Noworodki.';
     case 'Magnez':
       return 'Upośledzenie nerek.';
     case 'Midazolam':
-      return 'Upojenie alkoholowe.';
+      return 'Upojenie alkoholowe, dzieci <7 m.ż.';
     case 'Morfina':
       return 'Uraz wielonarządowy, podwyższone ciśnienie wewnątrzczaszkowe, '
           'porfiria, okres karmienia piersią. ';
@@ -383,23 +385,24 @@ String setDawkowanie(String? drugName) {
   switch (drugName) {
     case 'Adenozyna':
       return 'Dorośli: 6 mg iv w szybkim bolusie. Można powtórzyć '
-          'dwukrotnie po 12 mg.\n\nDzieci: 0,2 mg/kg (max 6 mg)'
-          '. Jeśli nieskuteczne po 2 minutach  podaj 0,4 mg/kg iv '
-          '(max. 12 mg)\n\nAmpułkę zawierającą 6 mg leku '
-          'rozcieńcz w 3 ml 0,9% NaCl i podaj 0,1 ml/kg w '
-          'pierwszej dawce i 0,2 ml/kg w drugiej dawce.\n'
+          'dwukrotnie (pierwsza dawka: 12 mg, druga: 18 mg).\n\nDzieci: 0,2 '
+          'mg/kg (max 6 mg)'
+          '. Jeśli nieskuteczne po minucie  podaj 0,3 mg/kg iv '
+          '(max. 12 mg).\n'
           '\nUwaga, ze względu na krótki okres półtrwania '
           'należy podać szybko i natychmiast przepłukać 20 ml '
           'NaCl unosząc kończynę do góry.';
     case 'Adrenalina':
-      return 'Dorośli\n\n resuscytacja: 1mg iv\n astma: 0,3 mg im\n\n '
+      return 'Dorośli\n\n resuscytacja: 1mg iv\n  '
           'anafilaksja: 0,5 mg w mięsień udowy\n ciężka bradykardia: wlew '
           '2-10 µg/min.\n\n Dzieci\n\n resuscytacja: 0,01mg/kg iv\n '
-          'astma: 0,01 mg/kg max 0,3mg sc\n  anafilaksja: w zależności od '
+          ' anafilaksja: w zależności od '
           'wieku\n 0-6 r. ż.  0,15 mg im,\n6-12 lat 0,3 mg im,\n>12 lat 0,5 '
           'mg im\n\n  krup wirusowy: 5 mg w nebulizacji (5 ml).';
     case 'Amiodaron':
-      return 'Dzieci\n\n 5mg/kg iv, można raz powtórzyć\n\n Dorośli\n\n 300 '
+      return 'Dzieci\n\n 5mg/kg (max 300 mg) iv , można raz powtórzyć (max '
+          '150 mg)\n\n '
+          'Dorośli\n\n 300 '
           'mg iv, można podać drugą dawkę 150 mg\n\n rozcieńczać 5% '
           'glukozą';
     case 'Atropina':
@@ -410,26 +413,28 @@ String setDawkowanie(String? drugName) {
           'brzusznej (kolka żółciowa, nerkowa) – i.m. lub i.v. 0,5–1 mg\n'
           '\nDzieci \n\n asystolia 0,02 mg/kg\nbradykardia 0,02 mg/kg\n '
           'zatrucie 0,02 mg/kg powtarzać co 3-15 min do osiągnięcia efektu '
-          'atropinizacji.\n Minimalna dawka 0,1 mg';
+          'atropinizacji.\n Minimalna dawka 0,1 mg, max 0,5 mg.';
     case 'Deksametazon':
       return 'Dorośli: reakcja anafilaktyczna 4-8 mg iv lub im (max 32 '
           'mg/24h), stan astmatyczny 8-20 mg iv, wysokogórski obrzęk płuc 8 '
           'mg iv\n\nDzieci zapalenie krtani 0,15-0,6 mg/kg iv lub im, astma'
           ' 4-8 mg iv lub im, anafilaksja 4-8 mg iv lub im';
     case 'Fentanyl':
-      return 'Dorośli i dzieci: 1 - 2 µg/kg iv powoli, przez około 1 - 3 min'
+      return 'Dorośli i dzieci > 1 r.ż: 0,05 - 2 µg/kg iv powoli, przez około '
+          '1 - 3 min'
           '.';
     case 'Furosemid':
       return 'Dorośli:\n\n0,5 - 1 mg/kg i.v., ewentualnie dawka 2,5 raza '
           'większa niż stosowana przewlekle.\n\n W obrzęku zwykle pierwsza '
           'dawka 40 mg i.v.\n\nUwaga, wg CHPL lek należy podawać z szybkością'
-          ' nie większą niż 4 mg/min (czyli 40 mg/10 min). Dzieci:\n\n 1 -'
-          ' 2 mg/kg iv';
+          ' nie większą niż 4 mg/min (czyli 40 mg/10 min). Dzieci:\n\n 1 '
+          ' mg/kg iv';
     case 'Glukagon':
       return 'Dorośli:\n\n1 mg i.m.\n\nDzieci\n\n0,5 mg i.m. u  dzieci do 25 '
           'kg,\n 1 mg i.m. u dzieci powyżej 25 kg';
     case 'Glukoza':
-      return 'Dzieci:\n\n2,5 ml/kg 20% roztworu czyli 0,5 g/kg iv\n'
+      return 'Noworodki 0,25 g/kg\n\nDzieci:\n\n1,5 ml/kg 20% roztworu czyli '
+          '0,3 g/kg iv\n'
           '\nDorośli\n\n 1 ml/kg 20% roztworu czyli 0,2 g/kg iv';
     case 'Hydrokortyzon':
       return 'Dzieci \n\nastma 5mg/kg iv\n anafilaksja: w zależności od wieku'
@@ -450,7 +455,8 @@ String setDawkowanie(String? drugName) {
     case 'Klemastin':
       return 'tylko u dorosłych: \n 2 mg w 10 ml iv';
     case 'Klonazepam':
-      return 'Dzieci:\n\n 0,5mg iv  w rozcieńczeniu\n\n Dorośli:\n\n 1 mg iv '
+      return 'U noworodków niezalecany.\n\nDzieci:\n\n 0,5mg iv  w '
+          'rozcieńczeniu\n\n Dorośli:\n\n 1 mg iv '
           'w rozcieńczeniu';
     case 'Magnez':
       return 'Dorośli:\n\n2 - 4 g iv we wlewie w 5% glukozie lub '
@@ -467,7 +473,8 @@ String setDawkowanie(String? drugName) {
           'dawki frakcjonowane po 2 mg do ustąpienia bólu';
     case 'NaHCO3':
       return 'Dorośli: 50 mmol (50 ml) iv\n\nDzieci: 1 mmol/kg (1 ml/kg) iv.'
-          '\n\nU dzieci <2 lata lek wymaga rozcieńczenia w stosunki 1:1 i '
+          '\n\nU dzieci <2 lata lek wymaga rozcieńczenia w stosunki 1:1 5% '
+          'glukozą i '
           'podawania w powolnym  wlewie 1 kropla/sek.';
     case 'Nalokson':
       return 'Dorośli: 0,4 mg iv powtarzać co 2 min do maksymalnej dawki 2 mg'
@@ -494,10 +501,11 @@ String setDawkowanie(String? drugName) {
           '.: 50 mg\n3 m.ż. - 1 r.ż.: 80 mg\n2 r.ż. - 3 r.ż.: 125 mg\n4 r.ż. '
           '- 9 r.ż.: 250 mg\n>9 r.ż.: 500 mg';
     case 'Relanium - Diazepam':
-      return 'u dzieci:\n\n0,1 - 0,3 mg/kg iv tzn bez rozcieńczania nabrać do'
+      return 'u dzieci:\n\n0,2 - 0,25 mg/kg iv tzn bez rozcieńczania nabrać do'
           ' strzykawki 2 ml i pamiętać, że w 0,1 ml jest leku na 2 kg wagi '
           'dziecka (0,1 ml/2 kg czyli 0,25 mg/kg)\n\n Diazepam (Relsed wlewka'
-          ' doodbytniczna) 0,5 mg/kg pr u dzieci do 10 kg, 5 mg u dzieci 10 '
+          ' doodbytniczna) 0,5 mg/kg pr u dzieci do 10 kg (powyżej >6 m.ż), 5'
+          ' mg u dzieci 10 '
           '-15 kg i 10 mg u dzieci >15 kg.\n\n dorośli:\n\n 5 - 10 mg iv ';
     case 'Salbutamol':
       return 'Nebulizacja\n\nU dzieci >20 kg i dorosłych  5 mg w '
@@ -631,16 +639,16 @@ String setInneInfo(String? drugName) {
           'krupu u dzieci.\n\nPodajac adreanlinę iv przy NZK nie należy '
           'podawać NaHCO3 (dwuwęglan sodu) przez to samo wkłucie, gdyż '
           'adrenalina ulega przyspieszonemu rozkładowi w środowisku '
-          'zasadowym.\n\nPodczas nebulizacji adrenaliną w krupie wirusowym '
-          'ilość leku wchłonięta zależy od objętości oddechowej i czasu '
-          'nebulizacji, a nie od ilości leku wlanego do pojemnika. \n\nDawka 5'
+          'zasadowym.\n\nAdrenalina powoduje spadek wartości CO2 widoczny na '
+          'kapnometrze.\n'
+          '\nDawka 5'
           ' mg'
           ' w nebulizacji jest podana na podstawie artykułu "Krup wirusowy"'
           ' wydawnictwo Medycyna Praktyczna autorstwa prof. dr hab. med. '
           'Andrzeja Milanowskiego. W praktyce zacznij od 1 mg i ewentualnie   '
           'powtarzaj do dawki łącznej 5mg jeśli brak poprawy.';
     case 'Amiodaron':
-      return 'Zawiera jod więc powoduje wzrost jego poziomu we krwi.';
+      return 'Zawiera jod więc powoduje wzrost jego poziomu we krwi.\n\nHiperglikemia zmniejsza skuteczność amiodaronu.';
     case 'Atropina':
       return 'Dawka poniżej 0,1 mg może wywołać paradoksalną bradykardię. W '
           'zatruciu środkami fosfoorganicznymi konieczne mogą być duże dawki,'

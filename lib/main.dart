@@ -4,6 +4,7 @@
 // ctrl + shift + alt + j - zaznacz wszystkie podobne
 // open ios/Runner.xcworkspace
 import 'package:flutter/material.dart';
+import 'package:leki_stare/src/screens/warning_home_screen.dart';
 
 import 'src/screens/about.dart';
 import 'src/screens/detailsScreens/maska_twarzowa.dart';
@@ -60,8 +61,9 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      initialRoute: TabsScreen.id,
+      initialRoute: WarningHomeScreen.id,
       routes: {
+        WarningHomeScreen.id: (context) => WarningHomeScreen(),
         NewBorn.id: (context) => NewBorn(),
         DrugListScreen.id: (context) => DrugListScreen(),
         TabsScreen.id: (context) => TabsScreen(),
